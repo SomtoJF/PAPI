@@ -1,8 +1,9 @@
-import { Express, json } from "express";
-const express = require("express");
+import express, { Express, json } from "express";
+import dotenv from "dotenv";
 
 const app: Express = express();
-app.use(json);
+dotenv.config();
+app.use(json());
 const port = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
